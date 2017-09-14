@@ -163,3 +163,7 @@ public class JobData {
     }
 
 }
+//allows a user /search for jobs matching a specific search term
+//displays all results at /search/results
+//displays all 98 jobs
+//displays white and grey alternating

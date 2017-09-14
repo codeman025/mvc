@@ -9,12 +9,12 @@
     <div class="container body-content">
         <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
         <h2>View All</h2>
-        <ul>
+        <ul><!-- this is how we generate links, using data from columnChoices-->
             <li th:each="column : ${columns}">
                 <a th:href="@{/list/values(column=${column.key})}" th:text="${column.value}"></a>
-            </li>
-        </ul>
-    </div>
+            </li><!--^thymeleafs way of generating links with query parameters based on KEY: Value pairs -->
+        </ul><!-- COLUMN= is the query parameters that is based off the value of ${column.key}-->
+    </div><!-- when these links are clicked they will be routed to the listColumnValues handler in LC -->
 
 </body>
 </html>

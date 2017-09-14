@@ -16,8 +16,8 @@
             <tr th:each="item, idx : ${items}" th:class="${idx.odd} ? 'odd'">
                 <td><a th:href="@{/list/jobs(column=${column},value=${item})}" th:text="${item}"></a></td>
             </tr>
-        </table>
-
+        </table><!-- generates /list/values?column=location, as 2 query params, one for column and value -->
+<!-- this results in /list/jobs?column=location&value=Seattle-->
     </div>
 
 </div>

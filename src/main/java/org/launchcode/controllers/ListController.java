@@ -13,8 +13,8 @@ import java.util.HashMap;
  * Created by LaunchCode
  */
 @Controller
-@RequestMapping(value = "list")
-public class ListController {
+@RequestMapping(value = "list")//localhost/list
+public class ListController {//the constructor puts variable in column choices
 
     static HashMap<String, String> columnChoices = new HashMap<>();
 
@@ -51,11 +51,12 @@ public class ListController {
         }
 
     }
-
+//uses the query parameter "column" to determine what is gotten from job data, if 'all' it will get it all
+    //and sent it to list-jobs.html, BUTTT if all isn't selected, it renders the data in list-column.html
     @RequestMapping(value = "jobs")
     public String listJobsByColumnAndValue(Model model,
             @RequestParam String column, @RequestParam String value) {
-
+//these are the 2 query parameters column and value- basically making a search functionality
         ArrayList<HashMap<String, String>> jobs = JobData.findByColumnAndValue(column, value);
         model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
         model.addAttribute("jobs", jobs);

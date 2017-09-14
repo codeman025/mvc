@@ -12,11 +12,11 @@ import java.util.HashMap;
 @Controller
 public class HomeController {
 
-    @RequestMapping(value = "")
+    @RequestMapping(value = "")//if there is nothing infront of localhost:8080 it directs to this page
     public String index(Model model) {
 
         HashMap<String, String> actionChoices = new HashMap<>();
-        actionChoices.put("search", "Search");
+        actionChoices.put("search", "Search");//sets the 2 options for redirection search and list
         actionChoices.put("list", "List");
 
         model.addAttribute("actions", actionChoices);
@@ -25,3 +25,4 @@ public class HomeController {
     }
 
 }
+//Basically just points to index.html template

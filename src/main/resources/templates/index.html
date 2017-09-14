@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head">
+<html xmlns:th="http://www.thymeleaf.org/"><!-- this steals information from fragments -->
+<head th:replace="fragments :: head"><!-- steals the "head" section from fragments -->
 </head>
 <body>
 
@@ -9,8 +9,8 @@
     <div class="container body-content">
         <p>View jobs by:</p>
         <ul>
-            <li th:each="action : ${actions}">
-                <a th:href="@{'/' + ${action.key}}" th:text="${action.value}"></a>
+            <li th:each="action : ${actions}"><!-- for each action in actions in this case the 5 options -->
+                <a th:href="@{'/' + ${action.key}}" th:text="${action.value}"></a><!-- iterates through employer, job etc -->
             </li>
         </ul>
     </div>

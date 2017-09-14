@@ -10,7 +10,7 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <form th:action="@{/search/results}">
+    <form th:action="@{/search/results}"><!-- thym loop, display each job IN ITS OWN TABLE-->
         <h2>Search by:</h2>
 
         <p>
@@ -37,7 +37,7 @@
     <hr />
 
     <!-- TODO #2 - COMPLETE - Loop over jobs map to display all job fields -->
-
+<!-- us thyme to take it from fragments-->
     <div th:if="${jobs}">
         <div th:replace="fragments :: results"></div>
     </div>
